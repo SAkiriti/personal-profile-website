@@ -1,19 +1,16 @@
 /* ---- Tokens ---- */
 :root {
-  --bg: #fbf9f7;
+  --bg: #fdfbff;
   --surface: #ffffff;
-  --text: #2c3338;
-  --text-muted: #6b7280;
-
-  --sage: #a8c3b0;
-  --sage-deep: #4f7561;
-  --blush: #e8bfc0;
-  --sky: #a9c4d8;
-  --sand: #e6cfa8;
-  --lilac: #c4bdd9;
-
-  --border: #ece7e1;
-  --radius: 16px;
+  --text: #1b1a26;
+  --text-muted: #5d5a70;
+  --purple: #7c3aed;
+  --purple-dark: #5b21b6;
+  --pink: #ec4899;
+  --teal: #0d9488;
+  --amber: #f59e0b;
+  --border: #e9e4f2;
+  --radius: 14px;
   --max-width: 900px;
 }
 
@@ -41,7 +38,7 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.1rem; }
 
 a {
-  color: var(--sage-deep);
+  color: var(--purple-dark);
   text-decoration: none;
   font-weight: 500;
 }
@@ -51,8 +48,8 @@ a:hover {
 }
 
 code {
-  background: #eef3ef;
-  color: var(--sage-deep);
+  background: #f3ecfe;
+  color: var(--purple-dark);
   padding: 0.12em 0.4em;
   border-radius: 5px;
   font-size: 0.88em;
@@ -60,7 +57,7 @@ code {
 
 /* ---- Header / nav ---- */
 .site-header {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -81,7 +78,10 @@ code {
 
 .nav-name {
   font-weight: 700;
-  color: var(--sage-deep);
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .nav-links {
@@ -99,8 +99,8 @@ code {
 }
 
 .nav-links a.active {
-  color: var(--text);
-  border-bottom: 2px solid var(--blush);
+  color: var(--purple);
+  border-bottom: 2px solid var(--pink);
 }
 
 /* ---- Layout ---- */
@@ -114,21 +114,27 @@ main {
   margin-top: 2rem;
   padding: 3.25rem 2.25rem;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #e7f0e9 0%, #f3e9ea 50%, #e6edf4 100%);
-  border: 1px solid var(--border);
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 45%, #ec4899 100%);
+  color: #fff;
+}
+
+.hero h1 {
+  color: #fff;
 }
 
 .tagline {
   font-size: 1.1rem;
   margin: 0 0 1.25rem;
-  color: var(--sage-deep);
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero .intro {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .intro {
   max-width: 62ch;
   margin: 0;
-  color: #414b52;
 }
 
 .hero-actions {
@@ -145,7 +151,7 @@ main {
 .section h2 {
   display: inline-block;
   padding-bottom: 0.35rem;
-  border-bottom: 3px solid var(--blush);
+  border-bottom: 3px solid var(--pink);
 }
 
 /* ---- Buttons ---- */
@@ -153,23 +159,30 @@ main {
   display: inline-block;
   padding: 0.65rem 1.4rem;
   border-radius: 999px;
-  background: var(--sage-deep);
-  color: #fff;
+  background: #fff;
+  color: var(--purple-dark);
   font-size: 0.95rem;
   font-weight: 600;
-  border: 2px solid var(--sage-deep);
+  border: 2px solid #fff;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .button:hover {
   text-decoration: none;
-  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 .button-secondary {
   background: transparent;
-  color: var(--sage-deep);
+  color: #fff;
+}
+
+/* Buttons outside the gradient hero (e.g. the contact form) */
+.contact-form .button {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
 }
 
 /* ---- Cards (Flexbox) ---- */
@@ -184,33 +197,33 @@ main {
   flex: 1 1 260px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 5px solid var(--sage);
+  border-top: 5px solid var(--purple);
   border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(80, 90, 85, 0.05);
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(80, 90, 85, 0.09);
+  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.14);
 }
 
-/* Rotate the pastel accent across cards */
-.card:nth-child(2) { border-top-color: var(--blush); }
-.card:nth-child(3) { border-top-color: var(--sky); }
-.card:nth-child(4) { border-top-color: var(--sand); }
+/* Rotate the accent colour across cards */
+.card:nth-child(2) { border-top-color: var(--pink); }
+.card:nth-child(3) { border-top-color: var(--teal); }
+.card:nth-child(4) { border-top-color: var(--amber); }
 
 .card p {
   margin: 0 0 0.9rem;
   font-size: 0.95rem;
-  color: #4a545b;
+  color: #4a4658;
 }
 
 .card-tags {
   display: inline-block;
-  background: #eef3ef;
-  color: var(--sage-deep);
+  background: #f3ecfe;
+  color: var(--purple-dark);
   font-size: 0.78rem !important;
   font-weight: 600;
   padding: 0.22rem 0.7rem;
@@ -235,7 +248,7 @@ main {
 }
 
 .skill-group h3 {
-  color: var(--sage-deep);
+  color: var(--purple-dark);
 }
 
 .skill-group ul {
@@ -248,8 +261,8 @@ main {
 }
 
 .skill-group li {
-  background: #f4f1ec;
-  color: #4a545b;
+  background: #f6f2fd;
+  color: #4a4658;
   font-size: 0.85rem;
   padding: 0.28rem 0.75rem;
   border-radius: 999px;
@@ -288,7 +301,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  outline: 2px solid var(--sage);
+  outline: 2px solid var(--purple);
   outline-offset: 1px;
   border-color: transparent;
 }
@@ -301,9 +314,8 @@ textarea {
 .site-footer {
   margin-top: 3.5rem;
   padding: 1.75rem 1.25rem;
-  background: linear-gradient(135deg, #e7f0e9 0%, #f3e9ea 50%, #e6edf4 100%);
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  color: #fff;
   font-size: 0.9rem;
   text-align: center;
 }
