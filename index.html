@@ -2,79 +2,161 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akiriti Singh | Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akiriti Singh — third-year Computer Science student at Maynooth University. Concurrent systems in Java and full-stack web development in Node.js.">
+  <title>Akiriti Singh | Home</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
-    <nav class="links">
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
+
+  <header class="site-header">
+    <nav class="nav">
+      <span class="nav-name">Akiriti Singh</span>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <div class="container">
 
-      <section class="card">
-        <h1>Akiriti Singh</h1>
-        <p>
-          I am 20 years old. I am currently in 2nd year of my Computer Science &amp;
-          Engineering degree. I love playing volleyball and badminton. My favourite
-          food is ice cream.
-        </p>
-        <img src="volleyball.jpg" alt="A volleyball on an indoor court" width="200" height="150" />
-      </section>
+    <section class="hero">
+      <h1>Akiriti Singh</h1>
+      <p class="tagline">Third-year Computer Science &amp; Software Engineering student at Maynooth University</p>
+      <p class="intro">
+        I like understanding how things work underneath, which is why I built a Redis
+        server from scratch rather than just using one. I'm comfortable working close to
+        the network layer in Java and building REST APIs in Node. I'm looking for a
+        software engineering internship for 2027.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="contact.html">Get in touch</a>
+        <a class="button button-secondary" href="https://github.com/SAkiriti">GitHub profile</a>
+      </div>
+    </section>
 
-      <section class="card">
-        <h2>Skills</h2>
-        <ul>
-          <li>Badminton</li>
-          <li>Waitressing</li>
-          <li>Chatty</li>
-          <li>Confident</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2>Projects</h2>
+      <div class="cards">
 
-      <section class="card">
-        <h2>Weekly Schedule</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Week</th>
-              <th>Topic</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Week 1</td>
-              <td>HTML</td>
-            </tr>
-            <tr>
-              <td>Week 2</td>
-              <td>CSS</td>
-            </tr>
-            <tr>
-              <td>Week 3</td>
-              <td>JavaScript</td>
-            </tr>
-            <tr>
-              <td>Week 4</td>
-              <td>Data structures</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <article class="card">
+          <h3>Redis Server Clone</h3>
+          <p class="card-tags">Java · TCP Sockets · JUnit 5 · Maven</p>
+          <p>
+            A concurrent TCP server implementing Redis' RESP wire protocol from scratch,
+            with no Redis libraries, verified against the real <code>redis-cli</code>.
+            Serves simultaneous clients with a thread pool and a
+            <code>ConcurrentHashMap</code>, and implements lazy key expiry, refactored out
+            of the socket layer so it can be unit-tested.
+          </p>
+          <a href="https://github.com/SAkiriti/redis-clone-java">View on GitHub →</a>
+        </article>
 
-    </div>
+        <article class="card">
+          <h3>Full-Stack Music Library</h3>
+          <p class="card-tags">Node.js · Express · SQLite · JavaScript</p>
+          <p>
+            A three-entity CRUD application with a REST API and dynamic frontend, covering
+            the full data lifecycle across artists, albums and songs. Referential integrity
+            is enforced with foreign key cascades, after tracing and fixing a schema defect
+            that was silently dropping related records.
+          </p>
+          <a href="https://github.com/SAkiriti/music-library-fullstack">View on GitHub →</a>
+        </article>
+
+        <article class="card">
+          <h3>Project FAB — Travel &amp; Tourism System</h3>
+          <p class="card-tags">Requirements Engineering · UML</p>
+          <p>
+            Led requirements for a three-person team, authoring ten persona-driven user
+            stories. The baseline I defined drove four UML models and a full system test
+            plan.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>C</li>
+            <li>SQL</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Technologies</h3>
+          <ul>
+            <li>Node.js &amp; Express</li>
+            <li>SQLite &amp; PostgreSQL</li>
+            <li>JUnit &amp; Maven</li>
+            <li>Git &amp; GitHub</li>
+            <li>Linux / WSL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Core Concepts</h3>
+          <ul>
+            <li>Concurrency</li>
+            <li>TCP sockets &amp; network protocols</li>
+            <li>REST API design</li>
+            <li>Relational data modelling</li>
+            <li>Unit testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Beyond the code</h2>
+      <div class="cards">
+
+        <article class="card">
+          <h3>Future Females in Tech 2026</h3>
+          <p class="card-tags">Workday</p>
+          <p>
+            Selected from over 200 applicants for a competitive early-careers programme in
+            software engineering.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Women in STEM Society</h3>
+          <p class="card-tags">Event Officer, 2026–2027</p>
+          <p>
+            Appointed to the committee to lead event planning and outreach, following two
+            years of STEM outreach mentoring 20+ young girls in computing.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Volleyball</h3>
+          <p class="card-tags">All-Ireland award winner</p>
+          <p>
+            All-Ireland and Republic of Ireland award winner. I still play volleyball and
+            badminton whenever I can.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; Akiriti Singh</p>
+  <footer class="site-footer">
+    <p>&copy; 2026 Akiriti Singh</p>
   </footer>
 
 </body>
+
 </html>
